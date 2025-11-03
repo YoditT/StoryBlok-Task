@@ -1,0 +1,62 @@
+/* base reset */
+* { box-sizing: border-box; }
+
+/* overall grid container: three equal columns */
+.image-component {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* equal columns */
+  align-items: start;
+  gap: 24px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Each figure becomes a centered card with an enforced max width */
+.image-card {
+  width: 100%;
+  max-width: 250px;   /* ensure all cards share the same max width */
+  margin: 0 auto;     /* center card inside its grid cell */
+  padding: 0;
+  text-align: center;
+}
+
+/* ensure the middle card is centered in the middle column */
+.image-center { justify-self: center; }
+
+/* keep left/right cards centered too (optional) */
+.image-elephant,
+.image-turtle { justify-self: center; }
+
+/* responsive images */
+.image-card__img {
+  display: block;
+  width: 100%;       /* fill .image-card */
+  height: auto;
+  max-width: 100%;   /* defensive */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+/* caption spacing */
+.image-card__caption { margin-top: 10px; }
+
+/* Medium / tablet: slightly smaller caps */
+@media (max-width: 900px) {
+  .image-card { max-width: 220px; }
+}
+
+/* Mobile: stack and reduce */
+@media (max-width: 640px) {
+  .image-component {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 12px;
+  }
+  .image-card { max-width: 320px; /* or 100% */ }
+  .image-elephant,
+  .image-center,
+  .image-turtle { justify-self: center; }
+}
