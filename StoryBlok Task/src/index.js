@@ -9,7 +9,8 @@ import Page from "./components/Page";
 import Teaser from "./components/Teaser";
 import Grid from "./components/Grid";
 import Feature from "./components/Feature";
-import Card from "./components/Card";
+import Image from "./components/Image";
+
 
 
 storyblokInit({
@@ -20,7 +21,7 @@ storyblokInit({
     teaser: Teaser,
     grid: Grid,
     feature: Feature,
-    cards: Card,
+    image: Image,
   },
   apiOptions: {
     // for spaces located in the US or China:
